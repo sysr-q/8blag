@@ -24,9 +24,10 @@ $(function () {
         y: canvas.height() - 10,
         width: canvas.width(),
         height: 10,
-        fromCenter: false,
+        fromCenter: false
     });
 
+    /* the sun is huuuuuuuuuge */
     canvas.drawRect({
         layer: true,
         group: "sun",
@@ -54,7 +55,7 @@ $(function () {
         y: 11,
         width: 6,
         height: 4,
-        fromCenter: true,
+        fromCenter: true
     });
 
     canvas.drawRect({
@@ -69,7 +70,54 @@ $(function () {
         y: 11,
         width: 6,
         height: 4,
+        fromCenter: true
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-glasses-link",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 15,
+        y: 10,
+        width: 4,
+        height: 2,
+        fromCenter: true
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-glasses-link-uleft",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 6,
+        y: 9,
+        width: 4,
+        height: 2,
         fromCenter: true,
+        rotate: 30
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-glasses-link-uright",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 24,
+        y: 9,
+        width: 4,
+        height: 2,
+        fromCenter: true,
+        rotate: 330
     });
 
     canvas.drawRect({
@@ -84,7 +132,7 @@ $(function () {
         y: 21,
         width: 10,
         height: 4,
-        fromCenter: true,
+        fromCenter: true
     });
 
     canvas.drawRect({
@@ -99,6 +147,21 @@ $(function () {
         y: 18,
         width: 4,
         height: 4,
-        fromCenter: true,
-    })
+        fromCenter: true
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-mouth-uright",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 21,
+        y: 18,
+        width: 4,
+        height: 4,
+        fromCenter: true
+    });
 });
