@@ -1,5 +1,5 @@
 $(function () {
-    var canvas = $("#background");
+    var canvas = $("#8blag");
 
 
     canvas.drawRect({
