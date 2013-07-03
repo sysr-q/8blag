@@ -1,0 +1,14 @@
+body, html {
+    padding: 0;
+    margin: 0 auto;
+}
+
+#background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
