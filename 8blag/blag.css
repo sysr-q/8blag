@@ -3,7 +3,11 @@ body, html {
     margin: 0 auto;
 }
 
-#background {
+body {
+    background-color: #ebf2f5;
+}
+
+/*#background {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -11,4 +15,4 @@ body, html {
     display: block;
     width: 100%;
     height: 100%;
-}
+}*/
