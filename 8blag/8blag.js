@@ -164,4 +164,10 @@ $(function () {
         height: 4,
         fromCenter: true
     });
+
+    /* // slowly move Mr Sun to the right side
+    canvas.animateLayerGroup("sun", {
+        x: "+=" + (canvas.width() - 40)
+    }, 2000);
+    */
 });
