@@ -11,8 +11,7 @@ $(function () {
         y: 0,
         width: canvas.width(),
         height: canvas.height(),
-        fromCenter: false,
-        index: 0
+        fromCenter: false
     });
 
     canvas.drawRect({
@@ -21,9 +20,9 @@ $(function () {
 
         fillStyle: "#ffeeb0",
         x: 0,
-        y: canvas.height() - 10,
+        y: canvas.height() - 12,
         width: canvas.width(),
-        height: 10,
+        height: 12,
         fromCenter: false
     });
 
