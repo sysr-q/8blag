@@ -42,21 +42,63 @@ $(function () {
         fromCenter: false
     });
     
-
-    /*
     canvas.drawRect({
         layer: true,
         group: "sun",
-        name: "sun-glasses",
+        name: "sun-glasses-left",
         draggable: true,
         dragGroupWithLayer: true,
 
         fillStyle: "#000000",
         x: 10,
-        y: 10,
-        width: 5,
+        y: 11,
+        width: 6,
         height: 4,
         fromCenter: true,
     });
-    */
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-glasses-right",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 20,
+        y: 11,
+        width: 6,
+        height: 4,
+        fromCenter: true,
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-mouth",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 15,
+        y: 21,
+        width: 10,
+        height: 4,
+        fromCenter: true,
+    });
+
+    canvas.drawRect({
+        layer: true,
+        group: "sun",
+        name: "sun-mouth-uleft",
+        draggable: true,
+        dragGroupWithLayer: true,
+
+        fillStyle: "#000000",
+        x: 9,
+        y: 18,
+        width: 4,
+        height: 4,
+        fromCenter: true,
+    })
 });
