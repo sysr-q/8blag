@@ -266,7 +266,7 @@ $(function () {
             plusWidth = sizes[Math.floor(Math.random() * sizes.length)],
             plusHeight = sizes[Math.floor(Math.random() * sizes.length)];
 
-        console.log("addin'", num, nam);
+        //console.log("addin'", num, nam);
 
         c.drawRect({
             layer: true,
@@ -308,7 +308,7 @@ $(function () {
                 canvas.animateLayerGroup("cloud" + i, {
                     x: "-=666",
                 }, 0);
-                console.log("cloud", i, "is over:", layer[0].x);
+                //console.log("cloud", i, "is over:", layer[0].x);
             }
             canvas.animateLayerGroup("cloud" + i, {
                 x: "+=20",
