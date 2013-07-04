@@ -3,6 +3,8 @@ $(function () {
     window.eightblag = window.eightblag || {};
     window.eightblag.tree = 0;
     window.eightblag.trees = 20;
+    window.eightblag.cloud = 0;
+    window.eightblag.clouds = 5;
 
     canvas.drawRect({
         layer: true,
@@ -255,10 +257,79 @@ $(function () {
         });
     }
 
-    /* Let's spice up life - randomly move Mr Sun and drop some trees */
-    for (var i = 0; i < window.eightblag.trees; i++) {
-        drawTree(canvas, Math.floor(Math.random() * (640)));
+    function drawCloud(c, plusX, plusY) {
+        var sizes = [0, 2, 4];
+
+        var num = window.eightblag.cloud++,
+            nam = "cloud" + num,
+            color = "rgb(255,255,255)",
+            plusWidth = sizes[Math.floor(Math.random() * sizes.length)],
+            plusHeight = sizes[Math.floor(Math.random() * sizes.length)];
+
+        console.log("addin'", num, nam);
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-base",
+
+            fillStyle: color,
+            x: plusX,
+            y: 10 + plusY,
+            width: 10 + plusWidth,
+            height: 8 + plusHeight,
+            fromCenter: true
+        });
+        /*
+        c.animateLayerGroup(nam, {
+            x: "+=" + Math.floor(Math.random() * 200),
+            y: "+=" + Math.floor(Math.random() * 5)
+        }, 10000);
+        */
     }
+
+    function smartUpDown(layer) {
+        var rand = Math.floor(Math.random() * 5);
+        if (layer[0].y > 30) {
+            return "-=" + rand;
+        }
+        if (layer[0].y < 4) {
+            return "+=" + rand;
+        }
+        return ["+=", "-="][Math.floor(Math.random() * 2)] + rand;
+    }
+
+    function moveClouds(dontCall) {
+        dontCall = dontCall || false;
+        for (var i = 0; i < window.eightblag.cloud; i++) {
+            var layer = canvas.getLayerGroup("cloud" + i);
+            if (layer[0].x > 650) {
+                canvas.stopLayerGroup("cloud" + i, true);
+                canvas.animateLayerGroup("cloud" + i, {
+                    x: "-=666",
+                }, 0);
+                console.log("cloud", i, "is over:", layer[0].x);
+            }
+            canvas.animateLayerGroup("cloud" + i, {
+                x: "+=20",
+                y: smartUpDown(canvas.getLayerGroup("cloud" + i))
+            }, 10000);
+        }
+        if (!dontCall) {
+            setTimeout(moveClouds, 1000);
+        }
+    }
+
+    /* Let's spice up life - randomly move Mr Sun and drop some stuff in */
+    for (var i = 0; i <= window.eightblag.clouds; i++) {
+        drawCloud(canvas, Math.floor(Math.random() * 640), Math.floor(Math.random() * 8));
+    }
+    moveClouds();
+
+    for (var i = 0; i <= window.eightblag.trees; i++) {
+        drawTree(canvas, Math.floor(Math.random() * 640));
+    }
+
     canvas.animateLayerGroup("sun", {
         x: "+=" + Math.floor(Math.random() * 640)
     }, 0);
