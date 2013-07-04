@@ -6,7 +6,7 @@ $(function () {
         layer: true,
         name: "sky",
 
-        fillStyle: "#1180fd",
+        fillStyle: "rgb(0,120,248)", // "rgb(184,248,24)",
         x: 0,
         y: 0,
         width: canvas.width(),
@@ -18,7 +18,7 @@ $(function () {
         layer: true,
         name: "sand",
 
-        fillStyle: "#ffeeb0",
+        fillStyle: "rgb(252, 224, 168)",
         x: 0,
         y: canvas.height() - 12,
         width: canvas.width(),
@@ -34,7 +34,7 @@ $(function () {
         draggable: true,
         dragGroupWithLayer: true,
 
-        fillStyle: "#FFFF00",
+        fillStyle: "rgb(184,248,24)",
         x: 5,
         y: 5,
         width: 20,
