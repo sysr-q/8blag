@@ -34,7 +34,7 @@ $(function () {
         draggable: true,
         dragGroupWithLayer: true,
 
-        fillStyle: "rgb(184,248,24)",
+        fillStyle: "rgb(192, 249, 49)",
         x: 5,
         y: 5,
         width: 20,
@@ -168,5 +168,16 @@ $(function () {
     canvas.animateLayerGroup("sun", {
         x: "+=" + (canvas.width() - 40)
     }, 2000);
+    // move Mr Sun up and down across the canvas
+    for (var i = 0; i < 10; i++) {
+        canvas.animateLayerGroup("sun", {
+            x: "+=15",
+            y: "+=2"
+        }, 2000);
+        canvas.animateLayerGroup("sun", {
+            x: "+=15",
+            y: "-=2"
+        }, 2000);
+    }
     */
 });
