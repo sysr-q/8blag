@@ -1,6 +1,8 @@
 $(function () {
     var canvas = $("#8blag");
-
+    window.eightblag = window.eightblag || {};
+    window.eightblag.tree = 0;
+    window.eightblag.trees = 20;
 
     canvas.drawRect({
         layer: true,
@@ -165,11 +167,98 @@ $(function () {
     });
 
     /* a single tree. hrmph */
+    function drawTree(c, plusX) {
+        var num = window.eightblag.tree++,
+            nam = "tree" + num,
+            ranY = Math.floor(Math.random() * 8);
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-trunk",
 
-    /* // slowly move Mr Sun to the right side
+            fillStyle: "rgb(80,48,0)",
+            x: plusX,
+            y: 27 + ranY,
+            width: 4,
+            height: 30,
+            fromCenter: true
+        });
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-b1",
+
+            fillStyle: "rgb(0,88,0)",
+            x: plusX,
+            y: 33 + ranY,
+            width: 20,
+            height: 4,
+            fromCenter: true
+        });
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-b2",
+
+            fillStyle: "rgb(0,88,0)",
+            x: plusX,
+            y: 28 + ranY,
+            width: 16,
+            height: 4,
+            fromCenter: true
+        });
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-b3",
+
+            fillStyle: "rgb(0,88,0)",
+            x: plusX,
+            y: 23 + ranY,
+            width: 12,
+            height: 4,
+            fromCenter: true
+        });
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-b4",
+
+            fillStyle: "rgb(0,88,0)",
+            x: plusX,
+            y: 18 + ranY,
+            width: 8,
+            height: 4,
+            fromCenter: true
+        });
+
+        c.drawRect({
+            layer: true,
+            group: nam,
+            name: nam + "-b5",
+
+            fillStyle: "rgb(0,88,0)",
+            x: plusX,
+            y: 13 + ranY,
+            width: 4,
+            height: 4,
+            fromCenter: true
+        });
+    }
+
+    /* Let's spice up life - randomly move Mr Sun and drop some trees */
+    for (var i = 0; i < window.eightblag.trees; i++) {
+        drawTree(canvas, Math.floor(Math.random() * 640));
+    }
     canvas.animateLayerGroup("sun", {
-        x: "+=" + (canvas.width() - 40)
-    }, 2000);
+        x: "+=" + Math.floor(Math.random() * 640)
+    }, 0);
+
+    /*
     // move Mr Sun up and down across the canvas
     for (var i = 0; i < 10; i++) {
         canvas.animateLayerGroup("sun", {
