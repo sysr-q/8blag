@@ -16,13 +16,13 @@ $(function () {
 
     canvas.drawRect({
         layer: true,
-        name: "sand",
+        name: "grass",
 
-        fillStyle: "rgb(252, 224, 168)",
+        fillStyle: "rgb(0,168,68)",
         x: 0,
-        y: canvas.height() - 12,
+        y: canvas.height() - 8,
         width: canvas.width(),
-        height: 12,
+        height: 8,
         fromCenter: false
     });
 
@@ -163,6 +163,8 @@ $(function () {
         height: 4,
         fromCenter: true
     });
+
+    /* a single tree. hrmph */
 
     /* // slowly move Mr Sun to the right side
     canvas.animateLayerGroup("sun", {
