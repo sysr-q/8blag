@@ -168,9 +168,14 @@ $(function () {
 
     /* a single tree. hrmph */
     function drawTree(c, plusX) {
+        var colors = ["rgb(0,88,0)", "rgb(0,120,0)", "rgb(0,104,0)",
+                      "rgb(0,168,0)", "rgb(0,168,68)"];
+
         var num = window.eightblag.tree++,
             nam = "tree" + num,
             ranY = Math.floor(Math.random() * 8);
+            color = colors[Math.floor(Math.random() * colors.length)];
+
         c.drawRect({
             layer: true,
             group: nam,
@@ -189,7 +194,7 @@ $(function () {
             group: nam,
             name: nam + "-b1",
 
-            fillStyle: "rgb(0,88,0)",
+            fillStyle: color,
             x: plusX,
             y: 33 + ranY,
             width: 20,
@@ -202,7 +207,7 @@ $(function () {
             group: nam,
             name: nam + "-b2",
 
-            fillStyle: "rgb(0,88,0)",
+            fillStyle: color,
             x: plusX,
             y: 28 + ranY,
             width: 16,
@@ -215,7 +220,7 @@ $(function () {
             group: nam,
             name: nam + "-b3",
 
-            fillStyle: "rgb(0,88,0)",
+            fillStyle: color,
             x: plusX,
             y: 23 + ranY,
             width: 12,
@@ -228,7 +233,7 @@ $(function () {
             group: nam,
             name: nam + "-b4",
 
-            fillStyle: "rgb(0,88,0)",
+            fillStyle: color,
             x: plusX,
             y: 18 + ranY,
             width: 8,
@@ -241,7 +246,7 @@ $(function () {
             group: nam,
             name: nam + "-b5",
 
-            fillStyle: "rgb(0,88,0)",
+            fillStyle: color,
             x: plusX,
             y: 13 + ranY,
             width: 4,
@@ -252,7 +257,7 @@ $(function () {
 
     /* Let's spice up life - randomly move Mr Sun and drop some trees */
     for (var i = 0; i < window.eightblag.trees; i++) {
-        drawTree(canvas, Math.floor(Math.random() * 640));
+        drawTree(canvas, Math.floor(Math.random() * (640)));
     }
     canvas.animateLayerGroup("sun", {
         x: "+=" + Math.floor(Math.random() * 640)
